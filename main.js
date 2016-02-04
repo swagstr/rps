@@ -81,7 +81,7 @@ var game = function() {
 		}
 
 		// Finally add a nice "Play again" option
-		$('.comp-choice').after('<ul><li class="play-again">Play again?</li></ul>');
+		$('.comp-choice').after('<ul class="play-again"><li>Play again?</li></ul>');
 	})
 };
 
@@ -113,7 +113,7 @@ var main = function() {
 	game();
 
 	// Allow next round to load
-	$(document).on('click', '.play-again', function() {
+	$(document).on('click', '.play-again li', function() {
 		location.reload();
 	});
 
