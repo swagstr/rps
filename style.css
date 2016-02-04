@@ -1,0 +1,66 @@
+body {
+	background-color: black;
+}
+
+.header {
+	background-color: black;
+}
+
+.header h1 {
+	color: gray;
+	font-family: Verdana, serif;
+	font-size: 5em;
+	text-align: center;
+	padding: 0.5em;
+}
+
+.header p {
+	color: gray;
+	font-family: Verdana, serif;
+	font-size: 1em;
+	text-align: center;
+	padding: 1em;
+}
+
+.game, .counter, .last-bit {
+	background-color: gray;
+	padding: 1em;
+}
+
+.game ul, .last-bit ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+}
+
+.game li, .last-bit li {
+	display: inline-block;
+	float: center;
+	background-color: #dddddd;
+	padding: 0.5em;
+	color: black;
+	font-family: Verdana, serif;
+	font-size: 1em;
+	text-align: center;
+}
+
+.counter p, .last-bit p {
+	color: black;
+	font-family: Verdana, serif;
+	font-size: 1em;
+	text-align: center;
+}
+
+.footer {
+	background-color: black;
+	padding: 1em;
+}
+
+.footer p {
+	color: gray;
+	font-family: Verdana, serif;
+	font-size: 1em;
+	text-align: center;
+	padding: 1em;
+}
