@@ -52,6 +52,11 @@ body {
 	text-align: center;
 }
 
+.last-bit a {
+	text-decoration: none;
+	color: black;
+}
+
 .footer {
 	background-color: black;
 	padding: 1em;

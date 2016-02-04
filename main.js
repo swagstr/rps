@@ -60,7 +60,7 @@ var game = function() {
 		$('.intro').hide(); // Hide intro
 		$('.last').before("<p class='user-choice'>You picked " + userChoice + "...</p>"); // Remind user of choice
 		$('.user-choice').after("<p class='comp-choice'>Computer picked " + computerChoice + "...</p>"); // Tell user what comp chose
-		$('ul').hide(); // Hide choices so you can't go again
+		$('.game').hide(); // Hide choices so you can't go again
 		$('.counter').hide(); // Hide counter as it does not reload immediately
 		$('.last').hide(); // Hide counter reset
 		
