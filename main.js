@@ -52,7 +52,7 @@ var game = function() {
 	console.log("Computer: " + computerChoice); // Logged for those who wish to cheat
 
 	// Click function on list to decide user's choice
-	$('li').click(function() {
+	$('.game-list li').click(function() {
 		userChoice = $(this).attr('class'); // User choice is based off list
 		console.log("Player: " + userChoice); // Logged for testing
 
@@ -119,8 +119,10 @@ var main = function() {
 
 	// Allow a counter reset
 	$('.last').click(function() {
-		localStorage.clear();
-		location.reload();
+		if (confirm('Are you sure?')) {	
+			localStorage.clear();
+			location.reload();
+		} 
 	});
 };
 
