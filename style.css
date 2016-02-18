@@ -56,8 +56,10 @@ body {
     width: 50%%;
     max-height: 50%;
     height: auto;
+    -webkit-animation-name: myAnim;
+	-webkit-animation-duration: 0.7s;
+	-webkit-animation-iteration-count: 3;
     animation: myAnim 0.7s 3; 
-    -webkit-animation: myAnim 0.7s 3; 
     -moz-animation: myAnim 0.7s 3;
 }
 
