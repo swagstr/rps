@@ -353,6 +353,9 @@ body {
   	font-family: 'Josefin Sans', sans-serif;
   	font-size: 1.5em;
   }
+  .midmid p {
+  	font-size: 1.5em;
+  }
     .midbottom a:hover {
   	background-color: white;
   }
@@ -379,6 +382,9 @@ body {
     width: 850px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .midmid p {
+  	font-size: 2em;
   }
   .midbottom a {
   	font-size: 2em;
