@@ -56,8 +56,17 @@ body {
     width: 50%%;
     max-height: 50%;
     height: auto;
+    animation: myAnim 0.7s 3; 
     -webkit-animation: myAnim 0.7s 3; 
-    -moz-animation: myAnime 0.7s 3;
+    -moz-animation: myAnim 0.7s 3;
+}
+
+@keyframes myAnim
+{
+  from {-webkit-transform: rotate(0deg) }
+  50% {/* possible intermediate positions at any %
+  */}
+  to {-webkit-transform: rotate(30deg) }
 }
 
 @-webkit-keyframes myAnim
@@ -68,7 +77,7 @@ body {
   to {-webkit-transform: rotate(30deg) }
 }
 
-@-moz-keyframes myAnime
+@-moz-keyframes myAnim
 {
   from {transform: rotate(0deg) }
   50% {/* possible intermediate positions at any %
