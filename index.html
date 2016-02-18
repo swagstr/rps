@@ -4,6 +4,7 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="animate.min.css">
 	<title>RPS</title>
 </head>
 <body>
@@ -18,10 +19,18 @@
 			<li class="paper">Paper</li>
 			<li class="scissors">Scissors</li>
 		</ul>
+
+	</div>
+
+	<div class="hand hidden animated slideInDown">
+		<img src="rock.png"/>
 	</div>
 
 	<div class="counter">
 		<p>Wins: <span class="wins-count"></span> | Losses: <span class="losses-count"></span> | Ties: <span class="ties-count"></span></p>
+	</div>
+
+	<div class="finale hidden">
 	</div>
 
 	<div class="last-bit">
@@ -31,7 +40,8 @@
 	</div>
 
 	<div class="footer">
-		<p>Rock, Paper, Scissors by Sam Sarsten | Just for fun | Some code borrowed from Codecademy lessons and other bits from all over the interwebz | Enjoy</p>
+		<p>Learn more</p>
+		<!-- <p>Rock, Paper, Scissors by Sam Sarsten | Just for fun | Some code borrowed from Codecademy lessons and other bits from all over the interwebz | Enjoy</p> -->
 	</div>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

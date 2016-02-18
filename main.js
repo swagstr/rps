@@ -1,3 +1,5 @@
+
+
 // Set global variables 
 var userChoice = ""; // User's choice
 var computerChoice = ""; // Comp's choice
@@ -31,13 +33,70 @@ var result = function() {
 	}
 };	
 
-// Main Game Function - Decide comp's choice, compare to user, print results
-var game = function() {
-	// Parse values to numbers
+// THURSDAY TO-DO: Re-organize divs to make final page look clean. Go through code and clean up. Then rehaul design.
+
+var magic = function() {
+	$('.last-bit').addClass('hidden');
+	$('.hand').removeClass('hidden').delay(2900).queue(function(next){ //2900
+		$('.hand').addClass('animated slideOutRight');
+		next();
+	}).delay(1000).queue(function(next1){ //1000
+		$('.hand').addClass('hidden');
+					$('.finale').removeClass('hidden');
+			$('.finale').load('finale.html', finale).slideDown();
+
+
+		;
+		next1();
+	});
+
+
+};
+
+var finale = function() {
+		// Parse values to numbers
 	var numWins = parseInt(wins,10);
 	var numLosses = parseInt(losses,10); 
 	var numTies = parseInt(ties,10);
-   
+	// Finish layout change based on Result Function (Part 2) -- will reappear after animation run
+	$('.topleft p').after("<h2 class='user-choice'>You went with " + userChoice + "...</p>"); // Remind user of choice
+	if (userChoice === "paper") {
+		$('.user-pic p').after("<img class='rps-pic' src='paper.png'/>")
+	} else if (userChoice === "rock") {
+		$('.user-pic p').after("<img class='rps-pic' src='rock.png'/>")
+	} else {
+		$('.user-pic p').after("<img class='rps-pic' src='scissors.png'/>")
+	};
+	$('.topright p').after("<h2 class='comp-choice'>The computer chose " + computerChoice + "...</p>"); // Tell user what comp chose
+	if (computerChoice === "paper") {
+		$('.comp-pic p').after("<img class='rps-pic2' src='paper.png'/>")
+	} else if (computerChoice === "rock") {
+		$('.comp-pic p').after("<img class='rps-pic2' src='rock.png'/>")
+	} else {
+		$('.comp-pic p').after("<img class='rps-pic2' src='scissors.png'/>")		
+		};
+
+				if (wlt === "win") {
+		$('.midmid p').after("<p class='wlt'>You win</p>");
+		numWins = numWins + 1; // Add 1 to win counter 
+		localStorage.setItem('saved-wins', numWins); // Store wins to local storage
+		} else if (wlt === "lose") {
+			$('.midmid p').after("<p class='wlt'>You lose</p>");
+			numLosses = numLosses + 1; // Add 1 to loss counter
+			localStorage.setItem('saved-losses', numLosses); // Store losses to local storage
+		} else if (wlt === "tie") {
+			$('.midmid p').after("<p class='wlt'>It's a tie</p>");	
+			numTies = numTies + 1; // Add 1 to tie counter
+			localStorage.setItem('saved-ties', numTies); // Store tie to local storage
+		}
+
+		// Finally add a nice "Play again" option
+		$('.midbottom p').after('<ul><li><a href="#" class="play-again">Play again?</a></li></ul>');
+		$('.topleft p, .topright p, .user-pic p, .comp-pic p, midmid p, midbottom p').hide();
+}
+
+// Main Game Function - Decide comp's choice, compare to user, print results
+var game = function() {
 
 	// Deciding computer's choice
 	computerChoice = Math.random();
@@ -58,30 +117,19 @@ var game = function() {
 
 		// Changes layout of screen for post decision results (Part 1)
 		$('.intro').hide(); // Hide intro
-		$('.last').before("<p class='user-choice'>You picked " + userChoice + "...</p>"); // Remind user of choice
-		$('.user-choice').after("<p class='comp-choice'>Computer picked " + computerChoice + "...</p>"); // Tell user what comp chose
 		$('.game').hide(); // Hide choices so you can't go again
 		$('.counter').hide(); // Hide counter as it does not reload immediately
 		$('.last').hide(); // Hide counter reset
-		
-		// Finish layout change based on Result Funtion (Part 2)
-		result(); // From before will tell us result - w/l/t
-		if (wlt === "win") {
-		$('h1').after("<p class='wlt'>You win</p>");
-		numWins = numWins + 1; // Add 1 to win counter 
-		localStorage.setItem('saved-wins', numWins); // Store wins to local storage
-		} else if (wlt === "lose") {
-			$('h1').after("<p class='wlt'>You lose</p>");
-			numLosses = numLosses + 1; // Add 1 to loss counter
-			localStorage.setItem('saved-losses', numLosses); // Store losses to local storage
-		} else if (wlt === "tie") {
-			$('h1').after("<p class='wlt'>It's a tie</p>");	
-			numTies = numTies + 1; // Add 1 to tie counter
-			localStorage.setItem('saved-ties', numTies); // Store tie to local storage
-		}
 
-		// Finally add a nice "Play again" option
-		$('.comp-choice').after('<ul><li><a href="#" class="play-again">Play again?</a></li></ul>');
+		// Determine winner and run RPS animation
+		result(); // From before will tell us result - w/l/t
+		magic(); // Run RPS animation
+
+
+
+
+
+
 	})
 };
 
@@ -111,6 +159,7 @@ var main = function() {
 
 	// Run game function
 	game();
+
 
 	// Allow next round to load
 	$(document).on('click', '.play-again', function() {
