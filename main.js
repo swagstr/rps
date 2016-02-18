@@ -33,7 +33,7 @@ var result = function() {
 	}
 };	
 
-// THURSDAY TO-DO: Re-organize divs to make final page look clean. Go through code and clean up. Then rehaul design.
+// THURSDAY TO-DO: Need to assure images don't get skewed on mobile. Add safari animation. Go through code and clean up. Then rehaul design.
 
 var magic = function() {
 	$('.last-bit').addClass('hidden');
