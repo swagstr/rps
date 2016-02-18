@@ -8,7 +8,7 @@ body {
 
 .header h1 {
 	color: gray;
-	font-family: Verdana, serif;
+	font-family: 'PT Sans', sans-serif;
 	font-size: 5em;
 	text-align: center;
 	padding: 0.5em;
@@ -16,7 +16,7 @@ body {
 
 .header p {
 	color: gray;
-	font-family: Verdana, serif;
+	font-family: 'Josefin Sans', serif;
 	font-size: 1em;
 	text-align: center;
 	padding: 1em;
@@ -37,12 +37,17 @@ body {
 .game li, .last-bit li {
 	display: inline-block;
 	float: center;
-	background-color: #dddddd;
+	border: solid black 1px;
+	border-radius: 5px;
 	padding: 0.5em;
 	color: black;
-	font-family: Verdana, serif;
+	font-family: 'Josefin Sans', sans-serif;
 	font-size: 1em;
 	text-align: center;
+}
+
+.game li:hover, .last-bit li:hover {
+	background-color: white;
 }
 
 .hand {
@@ -105,7 +110,7 @@ body {
 
 .counter p, .last-bit p {
 	color: black;
-	font-family: Verdana, serif;
+	font-family: 'Josefin Sans', serif;
 	font-size: 1em;
 	text-align: center;
 }
@@ -116,7 +121,7 @@ body {
 }
 
 .finale h2 {
-	font-family: Verdana, sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-size: 1.3em;
 	color: black;
 	font-weight: bolder;
@@ -130,11 +135,13 @@ body {
 
 .last-bit p {
 	padding-bottom: 0px;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 .last-bit a {
 	text-decoration: none;
 	color: black;
+	font-family: 'Josefin Sans', sans-serif;
 }
 
 .footer {
@@ -144,7 +151,7 @@ body {
 
 .footer p {
 	color: gray;
-	font-family: Verdana, serif;
+	font-family: 'Josefin Sans', serif;
 	font-size: 1em;
 	text-align: center;
 	padding: 1em;
@@ -161,7 +168,10 @@ body {
   order: 10;
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 459px) {
+	.last-bit li {
+		font-size: 0.75em;
+	}
   .topleft {
     order: 1;
     width: 100%;
@@ -214,6 +224,7 @@ body {
   	text-align: center;
   	color: black;
   	font-weight: bold;
+  	font-family: 'Josefin Sans', sans-serif;
   }
 
   .midright {
@@ -240,12 +251,23 @@ body {
   	color: black;
   	text-align: center;
   	border: solid black 1px;
+  	border-radius: 5px;
   	padding: 5px;
   	line-height: 100px;
+  	font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .midbottom a:hover {
+  	background-color: white;
   }
 }
-/*480*/
-@media screen and (min-width: 360px) {
+
+@media screen and (min-width: 460px) {
+ .game li {
+ 	font-size: 2em;
+ }
+
+
   .topleft {
     order: 1;
     width: 40%;
@@ -297,6 +319,7 @@ body {
   	text-align: center;
   	color: black;
   	font-weight: bold;
+  	font-family: 'Josefin Sans', sans-serif;
   }
 
   .midright {
@@ -323,14 +346,29 @@ body {
   	color: black;
   	text-align: center;
   	border: solid black 1px;
+  	border-radius: 5px;
   	padding: 5px;
+  	font-family: 'Josefin Sans', sans-serif;
+  	font-size: 1.5em;
+  }
+    .midbottom a:hover {
+  	background-color: white;
   }
 }
 
 @media screen and (min-width: 820px) {
-  .finale-container {
+  .game li {
+  	font-size: 3em;
+  }
+  .last-bit li {
+  	font-size: 1.5em;
+  }
+  .finale-container, .game, .counter, .last-bit {
     width: 850px;
     margin-left: auto;
     margin-right: auto;
+  }
+  .midbottom a {
+  	font-size: 2em;
   }
 }
