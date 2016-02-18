@@ -25,6 +25,7 @@ body {
 .game, .counter, .last-bit {
 	background-color: gray;
 	padding: 1em;
+	margin: -1px;
 }
 
 .game ul, .last-bit ul {
