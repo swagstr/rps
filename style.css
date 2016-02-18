@@ -14,6 +14,10 @@ body {
 	padding: 0.5em;
 }
 
+.big-title {
+	display: none;
+}
+
 .header p {
 	color: gray;
 	font-family: 'Josefin Sans', serif;
@@ -161,6 +165,14 @@ body {
 }
 
 @media screen and (max-width: 459px) {
+	.little-title {
+		display: block;
+
+	}
+
+	.big-title {
+		display: none;
+	}
 	.last-bit li {
 		font-size: 0.75em;
 	}
@@ -266,6 +278,14 @@ body {
 }
 
 @media screen and (min-width: 460px) {
+  .little-title {
+  	display: none;
+  }
+
+  .big-title {
+  	display: block;
+  }
+
  .game li {
  	font-size: 2em;
  }
