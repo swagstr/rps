@@ -167,7 +167,7 @@ var main = function() {
 	});
 
 	// Allow a counter reset
-	$('.last').click(function() {
+	$('.reset-button').click(function() {
 		if (confirm('Are you sure?')) {	
 			localStorage.clear();
 			location.reload();
